@@ -9,20 +9,26 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './converter.css',
 })
 export class Converter {
-  celsius: number | null = null;
-  fahrenheit: number | null = null;
 
-  convertToFahrenheit() {
-    if (this.celsius !== null) {
-      this.fahrenheit = parseFloat(((this.celsius * 9 / 5) + 32).toFixed(2));
+   celcius: any = '';
+  fahrenheit: any = '';
+  fToC: any = '';
+  cToF: any = '';
+
+  toFahrenheit(){
+    if (this.celcius !== ''){
+      this.cToF = ((this.celcius * (9/5)) + 32).toFixed(2);
+    } else {
+      this.cToF = '';
     }
   }
 
-  convertToCelsius() {
-    if (this.fahrenheit !== null) {
-      this.celsius = parseFloat(((this.fahrenheit - 32) * 5 / 9).toFixed(2));
+  toCelcius(){
+    if (this.fahrenheit !== ''){
+      this.fToC = ((this.fahrenheit - 32) * (5 / 9)).toFixed(2);
+    } else {
+      this.fToC = '';
     }
   }
-
  
 }
