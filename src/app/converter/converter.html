@@ -1,15 +1,27 @@
 <div class="container">
-  <h1>Welcome to Temperature Converter</h1>
+  <div class="card">
+    <h1 style="color: rgb(230, 11, 11);">Temperature  Converter</h1>
+    <hr />
 
-  <div class="form-group">
-    <label for="celsius">Celsius (°C):</label>
-    <input id="celsius" type="number" [(ngModel)]="celsius" (input)="convertToFahrenheit()" placeholder="Enter °C" />
+    <label for="c">Celsius (°C):</label>
+    <input
+      id="c"
+      type="number"
+      placeholder="0"
+      [(ngModel)]="celcius"
+      (ngModelChange)="toFahrenheit()"
+    />
+    <p>Fahrenheit: {{cToF}}</p>
+    <hr />
+
+    <label for="f">Fahrenheit (F):</label>
+    <input
+      id="f"
+      type="number"
+      placeholder="0"
+      [(ngModel)]="fahrenheit"
+      (ngModelChange)="toCelcius()"
+    />
+    <p>Celcius: {{fToC}}</p>
   </div>
-
-  <div class="form-group">
-    <label for="fahrenheit">Fahrenheit (°F):</label>
-    <input id="fahrenheit" type="number" [(ngModel)]="fahrenheit" (input)="convertToCelsius()" placeholder="Enter °F" />
-  </div>
-
- 
 </div>
